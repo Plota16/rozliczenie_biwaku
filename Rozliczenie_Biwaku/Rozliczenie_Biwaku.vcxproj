@@ -151,6 +151,7 @@
     <ClInclude Include="dialog_box.h" />
     <ClInclude Include="document.h" />
     <ClInclude Include="line.h" />
+    <ClInclude Include="render_csv.h" />
     <ClInclude Include="Resource.h" />
     <ClInclude Include="Rozliczenie_Biwaku.h" />
     <ClInclude Include="stdafx.h" />
@@ -162,6 +163,7 @@
     <ClCompile Include="dialog_box.cpp" />
     <ClCompile Include="document.cpp" />
     <ClCompile Include="line.cpp" />
+    <ClCompile Include="render_csv.cpp" />
     <ClCompile Include="Rozliczenie_Biwaku.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>

@@ -6,6 +6,8 @@ public:
 	~upper_window();
 	void render(HWND XhWnd, HINSTANCE XhInst);
 	void paint(HDC hdc);
+	date get_date();
+	std::wstring get_number();
 
 private:
 	int left;
@@ -13,6 +15,8 @@ private:
 	int right;
 	int bottom;
 	HWND add_document;
+	HWND render_report;
+	HWND render_csv;
 	HWND date1_static;
 	HWND date2_static;
 	HWND date1_edit;

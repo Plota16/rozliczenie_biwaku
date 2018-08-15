@@ -41,6 +41,12 @@ void upper_window::render(HWND hWnd, HINSTANCE hInst)
 
 	add_document = CreateWindowEx(WS_EX_CLIENTEDGE, L"BUTTON", L"Dodaj dokument", WS_CHILD | WS_VISIBLE |
 		WS_BORDER, left + 500, top + 45, 140, 55, hWnd, (HMENU)ID_DODAJ_DOKUMENT, hInst, NULL);
+
+	render_report = CreateWindowEx(WS_EX_CLIENTEDGE, L"BUTTON", L"Generuj raport", WS_CHILD | WS_VISIBLE |
+		WS_BORDER, left + 350, top + 20, 120, 45, hWnd, (HMENU)ID_GENERUJ_RAPORT, hInst, NULL);
+
+	render_csv = CreateWindowEx(WS_EX_CLIENTEDGE, L"BUTTON", L"Generuj CSV", WS_CHILD | WS_VISIBLE |
+		WS_BORDER, left + 350, top + 80, 120, 45, hWnd, (HMENU)ID_GENERUJ_CSV, hInst, NULL);
 }
 
 	void upper_window::paint(HDC hdc)
@@ -58,3 +64,21 @@ void upper_window::render(HWND hWnd, HINSTANCE hInst)
 		DeleteObject(PedzelBlaly);
 
 }
+
+	std::wstring upper_window::get_number()
+	{
+		std::wstring tmpstr = L"";
+		LPWSTR tmp = (LPWSTR)tmpstr.c_str();
+		GetWindowText(number_edit, tmp, 100);
+		tmpstr = tmp;
+		return tmpstr;
+	}
+
+	date upper_window::get_date()
+	{
+		std::wstring tmpstr = L"11.11.11";
+		LPWSTR tmp = (LPWSTR)tmpstr.c_str();
+		GetWindowText(date2_edit, tmp, 100);
+		date tmpdate(tmpstr);
+		return tmpdate;
+	}
