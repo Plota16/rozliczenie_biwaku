@@ -1,2 +1,4 @@
-﻿  upper_window.cpp
+﻿  render_csv.cpp
+c:\users\plota\source\repos\rozliczenie biwaku\rozliczenie_biwaku\rozliczenie_biwaku\render_csv.cpp(101): warning C4267: "argument": konwersja z "size_t" do "DWORD", możliwa utrata danych
+c:\users\plota\source\repos\rozliczenie biwaku\rozliczenie_biwaku\rozliczenie_biwaku\render_csv.cpp(88): warning C4101: "dwRozmiar": lokalna zmienna, do której nie istnieje odwołanie
   Rozliczenie_Biwaku.vcxproj -> C:\Users\Plota\source\repos\Rozliczenie Biwaku\rozliczenie_biwaku\x64\Debug\Rozliczenie_Biwaku.exe

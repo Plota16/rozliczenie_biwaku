@@ -71,6 +71,11 @@ void upper_window::render(HWND hWnd, HINSTANCE hInst)
 		LPWSTR tmp = (LPWSTR)tmpstr.c_str();
 		GetWindowText(number_edit, tmp, 100);
 		tmpstr = tmp;
+		if (tmpstr.empty())
+		{
+			std::wstring wyjatek = L"Nie wype³niono pola: Numer biwaku";
+			throw wyjatek;
+		}
 		return tmpstr;
 	}
 
@@ -79,6 +84,12 @@ void upper_window::render(HWND hWnd, HINSTANCE hInst)
 		std::wstring tmpstr = L"11.11.11";
 		LPWSTR tmp = (LPWSTR)tmpstr.c_str();
 		GetWindowText(date2_edit, tmp, 100);
+		tmpstr = tmp;
+		if (tmpstr.empty())
+		{
+			std::wstring wyjatek = L"Nie wype³niono pola: Data zakoñczenia";
+			throw wyjatek;
+		}
 		date tmpdate(tmpstr);
 		return tmpdate;
 	}

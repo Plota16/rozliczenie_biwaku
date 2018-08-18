@@ -102,8 +102,9 @@ void render_csv::save()
 			MessageBox(NULL, L"Błąd zapisu do pliku", L"Dupa blada!", MB_ICONEXCLAMATION);
 			PostQuitMessage(0); // Zakoñcz program
 		}
-
-
+		tmp.clear();
+		wynik.clear();
+		
 		CloseHandle(hPlik); // Zamknij plik
 	
 	/*
