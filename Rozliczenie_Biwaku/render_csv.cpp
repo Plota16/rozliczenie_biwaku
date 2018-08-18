@@ -75,7 +75,7 @@ std::string render_csv::to_utf8(const std::wstring& str)
 
 void render_csv::save()
 {
-	LPWSTR sNazwaPliku = (LPWSTR)GlobalAlloc(GPTR, 260);;
+	LPWSTR sNazwaPliku = (LPWSTR)GlobalAlloc(GPTR, 260);
 	ZeroMemory(&ofn, sizeof(ofn));
 	ofn.lStructSize = sizeof(ofn);
 	ofn.lpstrFilter = L"Plik CSV (*.csv)\0*.csv\0Wszystkie pliki\0*.*\0";
@@ -106,20 +106,6 @@ void render_csv::save()
 		wynik.clear();
 		
 		CloseHandle(hPlik); // Zamknij plik
-	
-	/*
-		std::fstream file;
-		std::wstring wynik = prepare_text();
-		file.open(sNazwaPliku,std::fstream::in || std::fstream::trunc);
-		std::string x = to_utf8(wynik);
-		if (file.good()) 	file << x;
-		else
-		{
-			MessageBox(NULL, L"Błąd zapisu do pliku", L"Dupa blada!", MB_ICONEXCLAMATION);
-		}
-		
-		file.close();
-		*/
 	}
 
 }

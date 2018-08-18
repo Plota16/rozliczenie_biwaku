@@ -79,7 +79,7 @@ void upper_window::render(HWND hWnd, HINSTANCE hInst)
 		return tmpstr;
 	}
 
-	date upper_window::get_date()
+date upper_window::get_date()
 	{
 		std::wstring tmpstr = L"11.11.11";
 		LPWSTR tmp = (LPWSTR)tmpstr.c_str();
@@ -93,3 +93,18 @@ void upper_window::render(HWND hWnd, HINSTANCE hInst)
 		date tmpdate(tmpstr);
 		return tmpdate;
 	}
+
+date upper_window::get_start_date()
+{
+	std::wstring tmpstr = L"11.11.11";
+	LPWSTR tmp = (LPWSTR)tmpstr.c_str();
+	GetWindowText(date1_edit, tmp, 100);
+	tmpstr = tmp;
+	if (tmpstr.empty())
+	{
+		std::wstring wyjatek = L"Nie wype³niono pola: Data startu";
+		throw wyjatek;
+	}
+	date tmpdate(tmpstr);
+	return tmpdate;
+}

@@ -6,6 +6,7 @@ public:
 	~upper_window();
 	void render(HWND XhWnd, HINSTANCE XhInst);
 	void paint(HDC hdc);
+	date get_start_date();
 	date get_date();
 	std::wstring get_number();
 
