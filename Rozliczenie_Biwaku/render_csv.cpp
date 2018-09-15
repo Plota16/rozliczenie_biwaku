@@ -9,6 +9,7 @@ render_csv::render_csv()
 
 void render_csv::update(std::vector<document> Xdokument, date Xdata, std::wstring number)
 {
+	std::wstring tmp_month, tmp_day;
 	dokumenty = Xdokument;
 	int miesiac = Xdata.get_month();
 	int rok = Xdata.get_year();
@@ -16,13 +17,25 @@ void render_csv::update(std::vector<document> Xdokument, date Xdata, std::wstrin
 	if (miesiac == 1 || miesiac == 3 || miesiac == 5 || miesiac == 7 || miesiac == 8 || miesiac == 11 || miesiac == 12) dzien = 31;
 	else if (miesiac == 2) dzien = 28;
 	else dzien = 30;
-	data = std::to_wstring(rok) + L"-" + std::to_wstring(miesiac) + L"-" + std::to_wstring(dzien);
+	if (miesiac < 10)
+	{
+		tmp_month = L"0" + std::to_wstring(miesiac);
+	}
+	else tmp_month =  std::to_wstring(miesiac);
+	if (dzien < 10)
+	{
+		tmp_day = L"0" + std::to_wstring(dzien);
+	}
+	else tmp_day = std::to_wstring(dzien);
+
+
+	data = std::to_wstring(rok) + L"-" + tmp_month + L"-" + tmp_day;
 	if (number.size() == 8 || number.size() == 9) kontachent = number;
 	else kontachent = number + L"/51/2018";
 }
 std::wstring render_csv::prepare_text()
 {
-	std::wstring tmp;
+	std::wstring tmp = L";data;kontrahent;nr faktury;tresc faktury;kwota\n";
 	std::wstring coma = L";";
 	std::wstring enter = L"\n";
 	
@@ -34,7 +47,7 @@ std::wstring render_csv::prepare_text()
 		{
 			if (x[i] == '.') x[i] = ',';
 		}
-		tmp += std::to_wstring(i + 1) + coma + data + coma + kontachent + coma + tmpdoc.get_symbol() + coma + tmpdoc.get_tresc() + coma + x + coma;
+		tmp += std::to_wstring(i + 1) + coma + data + coma + kontachent + coma + tmpdoc.get_symbol() + coma + tmpdoc.get_tresc() + coma + x;
 		if (i != dokumenty.size() - 1) tmp += enter;
 	}
 	return tmp;

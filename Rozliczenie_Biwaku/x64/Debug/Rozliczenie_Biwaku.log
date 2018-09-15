@@ -1,2 +1,4 @@
-﻿  Rozliczenie_Biwaku.cpp
+﻿  advance_dialog.cpp
+c:\users\plota\source\repos\rozliczenie biwaku\rozliczenie_biwaku\rozliczenie_biwaku\advance_dialog.cpp(61): warning C4267: "=": konwersja z "size_t" do "int", możliwa utrata danych
+c:\users\plota\source\repos\rozliczenie biwaku\rozliczenie_biwaku\rozliczenie_biwaku\advance_dialog.cpp(72): warning C4244: "inicjowanie": konwersja z "wchar_t" do "char", możliwa utrata danych
   Rozliczenie_Biwaku.vcxproj -> C:\Users\Plota\source\repos\Rozliczenie Biwaku\rozliczenie_biwaku\x64\Debug\Rozliczenie_Biwaku.exe

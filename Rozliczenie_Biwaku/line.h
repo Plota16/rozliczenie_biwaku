@@ -7,6 +7,8 @@ public:
 	void del();
 	void draw();
 	int what_size();
+	std::vector<document> get_dokumenty();
+	void sort();
 	~line();
 
 private:

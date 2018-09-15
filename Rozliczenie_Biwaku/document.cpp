@@ -6,6 +6,7 @@
 
 document::document(date Xdata, std::wstring Xsymbol, std::wstring Xtresc, double Xkwota, std::wstring Xrodzaj)
 {
+	state = 0;
 	data = Xdata;
 	symbol = Xsymbol;
 	tresc = Xtresc;
@@ -41,4 +42,14 @@ std::wstring document::get_rodzaj()
 std::wstring document::get_tresc()
 {
 	return tresc;
+}
+
+int document::get_state()
+{
+	return state;
+}
+
+void document::set_state(int i)
+{
+	state = i;
 }

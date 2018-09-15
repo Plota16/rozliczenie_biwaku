@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|Win32">
@@ -147,11 +147,14 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="advance.h" />
+    <ClInclude Include="advance_dialog.h" />
     <ClInclude Include="date.h" />
     <ClInclude Include="dialog_box.h" />
     <ClInclude Include="document.h" />
     <ClInclude Include="file.h" />
     <ClInclude Include="line.h" />
+    <ClInclude Include="preliminary.h" />
     <ClInclude Include="render_csv.h" />
     <ClInclude Include="Resource.h" />
     <ClInclude Include="Rozliczenie_Biwaku.h" />
@@ -160,11 +163,14 @@
     <ClInclude Include="upper_window.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="advance.cpp" />
+    <ClCompile Include="advance_dialog.cpp" />
     <ClCompile Include="date.cpp" />
     <ClCompile Include="dialog_box.cpp" />
     <ClCompile Include="document.cpp" />
     <ClCompile Include="file.cpp" />
     <ClCompile Include="line.cpp" />
+    <ClCompile Include="preliminary.cpp" />
     <ClCompile Include="render_csv.cpp" />
     <ClCompile Include="Rozliczenie_Biwaku.cpp" />
     <ClCompile Include="stdafx.cpp">

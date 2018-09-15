@@ -10,8 +10,11 @@ public:
 	std::wstring get_tresc();
 	std::wstring get_kwota();
 	std::wstring get_rodzaj();
+	int get_state();
+	void set_state(int i);
 
 private:
+	int state;
 	date data;
 	std::wstring symbol;
 	std::wstring tresc;
